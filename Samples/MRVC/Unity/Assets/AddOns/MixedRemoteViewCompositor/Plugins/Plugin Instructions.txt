@@ -1,0 +1,2 @@
+If hololens, use x86 plugin
+If editor, use x64 plugin
