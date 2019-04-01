@@ -2,6 +2,40 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.10240": {
+      "Microsoft.ApplicationInsights/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0"
+        },
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0"
+        },
+        "compile": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1883,9 +1917,53 @@
             "rid": "win8-aot"
           }
         }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
       }
     },
     "UAP,Version=v10.0.10240/win10-arm": {
+      "Microsoft.ApplicationInsights/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0"
+        },
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0"
+        },
+        "compile": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3624,9 +3702,53 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
       }
     },
     "UAP,Version=v10.0.10240/win10-arm-aot": {
+      "Microsoft.ApplicationInsights/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0"
+        },
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0"
+        },
+        "compile": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5328,9 +5450,53 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
       }
     },
     "UAP,Version=v10.0.10240/win10-x64": {
+      "Microsoft.ApplicationInsights/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0"
+        },
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0"
+        },
+        "compile": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7076,9 +7242,53 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
       }
     },
     "UAP,Version=v10.0.10240/win10-x64-aot": {
+      "Microsoft.ApplicationInsights/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0"
+        },
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0"
+        },
+        "compile": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8780,9 +8990,53 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
       }
     },
     "UAP,Version=v10.0.10240/win10-x86": {
+      "Microsoft.ApplicationInsights/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0"
+        },
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0"
+        },
+        "compile": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10528,9 +10782,53 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
       }
     },
     "UAP,Version=v10.0.10240/win10-x86-aot": {
+      "Microsoft.ApplicationInsights/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0"
+        },
+        "compile": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0"
+        },
+        "compile": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -12232,10 +12530,73 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
       }
     }
   },
   "libraries": {
+    "Microsoft.ApplicationInsights/1.0.0": {
+      "sha512": "HZ47/thX57SOuIivSvIbsR6L9CCb/Yt3IyB2i4KHmmNlf3DO+lqFwWIKDdbDNWKX+qh0Rg20/JSMPK0dwUsYYw==",
+      "type": "package",
+      "path": "microsoft.applicationinsights/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.ApplicationInsights.XML",
+        "lib/net40/Microsoft.ApplicationInsights.dll",
+        "lib/net45/Microsoft.ApplicationInsights.XML",
+        "lib/net45/Microsoft.ApplicationInsights.dll",
+        "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.XML",
+        "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll",
+        "lib/wp8/Microsoft.ApplicationInsights.XML",
+        "lib/wp8/Microsoft.ApplicationInsights.dll",
+        "microsoft.applicationinsights.1.0.0.nupkg.sha512",
+        "microsoft.applicationinsights.nuspec"
+      ]
+    },
+    "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+      "sha512": "0qQXC+CtbyF2RPuld5pF74fxsnP6ml0LUnzQ6GL9AXXY64LPsLDsPUAymoUffo7LZvPDppZboTYX59TfVxKA7A==",
+      "type": "package",
+      "path": "microsoft.applicationinsights.persistencechannel/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.ApplicationInsights.PersistenceChannel.XML",
+        "lib/net40/Microsoft.ApplicationInsights.PersistenceChannel.dll",
+        "lib/portable-win8+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.XML",
+        "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll",
+        "lib/wp8/Microsoft.ApplicationInsights.PersistenceChannel.XML",
+        "lib/wp8/Microsoft.ApplicationInsights.PersistenceChannel.dll",
+        "microsoft.applicationinsights.persistencechannel.1.0.0.nupkg.sha512",
+        "microsoft.applicationinsights.persistencechannel.nuspec"
+      ]
+    },
+    "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+      "sha512": "NvBQnFeiFd0O1QdBz06UGApD7zn7ztVi7qO18IsM3EjiXRNgfrEBXB+azNm8XqLY8xGFAqh3HAuSd/wHZMe0XA==",
+      "type": "package",
+      "path": "microsoft.applicationinsights.windowsapps/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
+        "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
+        "lib/wp8/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
+        "lib/wp8/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
+        "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
+        "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
+        "microsoft.applicationinsights.windowsapps.1.0.0.nupkg.sha512",
+        "microsoft.applicationinsights.windowsapps.nuspec"
+      ]
+    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "package",
@@ -15689,10 +16050,18 @@
         "system.xml.xmlserializer.4.0.10.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Assembly-CSharp-firstpass/1.0.0": {
+      "type": "project",
+      "path": "../Assembly-CSharp-firstpass/project.json",
+      "msbuildProject": "../Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "Microsoft.ApplicationInsights >= 1.0.0",
+      "Microsoft.ApplicationInsights.PersistenceChannel >= 1.0.0",
+      "Microsoft.ApplicationInsights.WindowsApps >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0"
     ],
     "UAP,Version=v10.0.10240": []
@@ -15716,9 +16085,21 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "uap10.0.10240": {
+          "projectReferences": {
+            "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj": {
+              "projectPath": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj"
+            }
+          }
+        }
       }
     },
     "dependencies": {
+      "Microsoft.ApplicationInsights": "[1.0.0, )",
+      "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )",
+      "Microsoft.ApplicationInsights.WindowsApps": "[1.0.0, )",
       "Microsoft.NETCore.UniversalWindowsPlatform": "[5.0.0, )"
     },
     "frameworks": {

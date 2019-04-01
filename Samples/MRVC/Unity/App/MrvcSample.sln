@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.9.28307.481
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrvcSample", "MrvcSample\MrvcSample.csproj", "{13A45C13-3265-47B8-BC48-A553B569DF55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "E:\Unity Projects\MixedRealityCompanionKit-master\MixedRemoteViewCompositor\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj", "{1391300B-B4BD-4D7D-ACBF-442F52C452BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "E:\Unity Projects\MixedRealityCompanionKit-master\MixedRemoteViewCompositor\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj", "{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "E:\Unity Projects\MixedRealityCompanionKit-master\MixedRemoteViewCompositor\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj", "{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,29 +49,47 @@ Global
 		{13A45C13-3265-47B8-BC48-A553B569DF55}.Release|x86.ActiveCfg = Release|x86
 		{13A45C13-3265-47B8-BC48-A553B569DF55}.Release|x86.Build.0 = Release|x86
 		{13A45C13-3265-47B8-BC48-A553B569DF55}.Release|x86.Deploy.0 = Release|x86
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Debug|ARM.ActiveCfg = Debug|ARM
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Debug|ARM.Build.0 = Debug|ARM
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Debug|x64.ActiveCfg = Debug|x64
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Debug|x64.Build.0 = Debug|x64
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Debug|x86.ActiveCfg = Debug|x86
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Debug|x86.Build.0 = Debug|x86
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Master|ARM.ActiveCfg = Master|ARM
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Master|ARM.Build.0 = Master|ARM
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Master|x64.ActiveCfg = Master|x64
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Master|x64.Build.0 = Master|x64
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Master|x86.ActiveCfg = Master|x86
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Master|x86.Build.0 = Master|x86
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Release|ARM.ActiveCfg = Release|ARM
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Release|ARM.Build.0 = Release|ARM
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Release|x64.ActiveCfg = Release|x64
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Release|x64.Build.0 = Release|x64
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Release|x86.ActiveCfg = Release|x86
-		{1391300B-B4BD-4D7D-ACBF-442F52C452BA}.Release|x86.Build.0 = Release|x86
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Debug|ARM.Build.0 = Debug|ARM
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Debug|x64.ActiveCfg = Debug|x64
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Debug|x64.Build.0 = Debug|x64
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Debug|x86.ActiveCfg = Debug|x86
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Debug|x86.Build.0 = Debug|x86
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Master|ARM.ActiveCfg = Master|ARM
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Master|ARM.Build.0 = Master|ARM
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Master|x64.ActiveCfg = Master|x64
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Master|x64.Build.0 = Master|x64
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Master|x86.ActiveCfg = Master|x86
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Master|x86.Build.0 = Master|x86
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Release|ARM.ActiveCfg = Release|ARM
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Release|ARM.Build.0 = Release|ARM
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Release|x64.ActiveCfg = Release|x64
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Release|x64.Build.0 = Release|x64
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Release|x86.ActiveCfg = Release|x86
+		{9FCFD2E5-5525-4AA4-AFD8-F7A180BE88BC}.Release|x86.Build.0 = Release|x86
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Debug|ARM.Build.0 = Debug|ARM
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Debug|x64.ActiveCfg = Debug|x64
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Debug|x64.Build.0 = Debug|x64
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Debug|x86.ActiveCfg = Debug|x86
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Debug|x86.Build.0 = Debug|x86
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Master|ARM.ActiveCfg = Master|ARM
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Master|ARM.Build.0 = Master|ARM
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Master|x64.ActiveCfg = Master|x64
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Master|x64.Build.0 = Master|x64
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Master|x86.ActiveCfg = Master|x86
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Master|x86.Build.0 = Master|x86
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Release|ARM.ActiveCfg = Release|ARM
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Release|ARM.Build.0 = Release|ARM
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Release|x64.ActiveCfg = Release|x64
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Release|x64.Build.0 = Release|x64
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Release|x86.ActiveCfg = Release|x86
+		{6EA15C59-BAFE-4C60-9B2D-69A54BC3072A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {94E3C458-99C6-4B3E-96B8-25D702BC3F6B}
+		SolutionGuid = {D43195BD-C45F-4D49-8520-B0F7F11FEAA9}
 	EndGlobalSection
 EndGlobal

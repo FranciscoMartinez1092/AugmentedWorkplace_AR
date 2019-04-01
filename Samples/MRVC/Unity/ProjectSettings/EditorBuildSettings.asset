@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/TestScene/MRVC.unity
     guid: 7e866b7bf686cd6419aae873587ac0b6
-  - enabled: 1
+  - enabled: 0
     path: Assets/MRVC-Hololens.unity
     guid: ad9a6d02784c04c4abdee01c3264c9f5

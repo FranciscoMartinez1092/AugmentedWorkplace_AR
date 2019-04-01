@@ -1922,6 +1922,20 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10240",
         "dependencies": {
+          "Assembly-CSharp-firstpass": "1.0.0",
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
         }
       }
@@ -3704,6 +3718,20 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10240",
         "dependencies": {
+          "Assembly-CSharp-firstpass": "1.0.0",
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
         }
       }
@@ -5449,6 +5477,20 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10240",
         "dependencies": {
+          "Assembly-CSharp-firstpass": "1.0.0",
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
         }
       }
@@ -7238,6 +7280,20 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10240",
         "dependencies": {
+          "Assembly-CSharp-firstpass": "1.0.0",
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
         }
       }
@@ -8983,6 +9039,20 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10240",
         "dependencies": {
+          "Assembly-CSharp-firstpass": "1.0.0",
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
         }
       }
@@ -10772,6 +10842,20 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10240",
         "dependencies": {
+          "Assembly-CSharp-firstpass": "1.0.0",
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
         }
       }
@@ -12517,6 +12601,20 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10240",
         "dependencies": {
+          "Assembly-CSharp-firstpass": "1.0.0",
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+        }
+      },
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0.10240",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "1.0.0",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+          "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
         }
       }
@@ -16034,6 +16132,11 @@
       "type": "project",
       "path": "../GeneratedProjects/UWP/Assembly-CSharp/project.json",
       "msbuildProject": "../GeneratedProjects/UWP/Assembly-CSharp/Assembly-CSharp.csproj"
+    },
+    "Assembly-CSharp-firstpass/1.0.0": {
+      "type": "project",
+      "path": "../GeneratedProjects/UWP/Assembly-CSharp-firstpass/project.json",
+      "msbuildProject": "../GeneratedProjects/UWP/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -16068,6 +16171,9 @@
       "frameworks": {
         "uap10.0.10240": {
           "projectReferences": {
+            "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj": {
+              "projectPath": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj"
+            },
             "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\Assembly-CSharp.csproj": {
               "projectPath": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\Assembly-CSharp.csproj"
             }
