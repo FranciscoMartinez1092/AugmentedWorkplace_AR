@@ -6,6 +6,7 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     public GameObject CursorPrefab;
+    public GameObject SceneRoot;
     public float DefaultDistance = 5.0f;
     public Color HitColor = Color.yellow;
     public Color BaseColor = Color.white;
@@ -29,6 +30,7 @@ public class CursorManager : MonoBehaviour
             this.cursorGameObject =
                 Instantiate(this.CursorPrefab, this.cameraTransform.position + this.cameraTransform.forward * DefaultDistance,
                     Quaternion.identity) as GameObject;
+            this.cursorGameObject.transform.SetParent(SceneRoot.transform);
         }
 
         if (this.cursorGameObject == null)

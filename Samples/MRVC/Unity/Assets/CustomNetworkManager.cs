@@ -8,6 +8,7 @@ public class CustomNetworkManager : MonoBehaviour
 {
     public NetworkIdentity prefab;
     public GameObject clientPrefab;
+    public GameObject SceneRoot;
     public Material lineMaterial;
     public bool isAtStartup = true;
     public bool isTheClient = true;
@@ -93,8 +94,9 @@ public class CustomNetworkManager : MonoBehaviour
     private GameObject SpawnSphere(Vector3 position, NetworkHash128 assetId)
     {
         GameObject clientObject = Instantiate(clientPrefab, position, Quaternion.identity);
+        clientObject.transform.SetParent(SceneRoot.transform);
         clientObject.AddComponent<NetworkIdentity>();
-        clientObject.AddComponent<MyNetworkTransform>();
+        clientObject.AddComponent<NetworkTransform>();
         return clientObject;
     }
     private void UnspawnSphere(GameObject sphere)
@@ -103,6 +105,12 @@ public class CustomNetworkManager : MonoBehaviour
     }
     void Start()
     {
+        ConnectionConfig myConfig = new ConnectionConfig();
+        Debug.Log("Channels: " + myConfig.ChannelCount);
+        foreach (ChannelQOS channel in myConfig.Channels)
+        {
+            Debug.Log(channel);
+        }
         // setup code
         if (isTheClient)
         {
@@ -144,7 +152,9 @@ public class CustomNetworkManager : MonoBehaviour
         myClient.RegisterHandler(AssetMessage.assetMessage, onAssetMsg);
         // Handle incoming line data
         myClient.RegisterHandler(CustomMessage.lineMessage, onClientReceiveMessage);
+        Debug.Log("Attemping to connect");
         myClient.Connect(serverAddress, 4444);
+        Debug.Log("Status: " + myClient.isConnected);
         isAtStartup = false;
     }
 
