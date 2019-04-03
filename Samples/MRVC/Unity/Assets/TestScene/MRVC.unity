@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CursorPrefab: {fileID: 1000013996614844, guid: 54412dbbbe61f3d40b342f0a3171e559,
     type: 2}
+  SceneRoot: {fileID: 0}
   DefaultDistance: 5
   HitColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   BaseColor: {r: 1, g: 1, b: 1, a: 1}
@@ -657,7 +658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &543899177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 543899176}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -908,6 +909,10 @@ Prefab:
     - target: {fileID: 114000011154029958, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
         type: 2}
       propertyPath: drawVisualMeshes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010302963436, guid: 2ed75ffdf9031c94e8bce4b3d17b9928, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1974,7 +1979,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1920159338}
-  - component: {fileID: 1920159339}
   - component: {fileID: 1920159340}
   m_Layer: 0
   m_Name: NetworkHandler
@@ -1996,20 +2000,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1920159339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1920159337}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143e3313754f0944695e601ac427ee5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAtStartup: 1
-  prefab: {fileID: 0}
-  lineMaterial: {fileID: 2100000, guid: d9f5efc2f1dfc6846a9ebeac2f029eff, type: 2}
 --- !u!114 &1920159340
 MonoBehaviour:
   m_ObjectHideFlags: 0

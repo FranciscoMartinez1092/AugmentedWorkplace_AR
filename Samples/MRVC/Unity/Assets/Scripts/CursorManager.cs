@@ -30,7 +30,7 @@ public class CursorManager : MonoBehaviour
             this.cursorGameObject =
                 Instantiate(this.CursorPrefab, this.cameraTransform.position + this.cameraTransform.forward * DefaultDistance,
                     Quaternion.identity) as GameObject;
-            this.cursorGameObject.transform.SetParent(SceneRoot.transform);
+            //this.cursorGameObject.transform.SetParent(SceneRoot.transform);
         }
 
         if (this.cursorGameObject == null)

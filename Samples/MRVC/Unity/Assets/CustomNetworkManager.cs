@@ -9,10 +9,14 @@ public class CustomNetworkManager : MonoBehaviour
     public NetworkIdentity prefab;
     public GameObject clientPrefab;
     public GameObject SceneRoot;
+    public DrawLine lineHandler;
+
     public Material lineMaterial;
+
     public bool isAtStartup = true;
     public bool isTheClient = true;
     public string serverAddress;
+
     NetworkClient myClient;
 
     public class CustomMessage
@@ -24,6 +28,10 @@ public class CustomNetworkManager : MonoBehaviour
         public Vector3[] vertices;
         public Vector2[] uvs;
         public int[] triangles;
+    }
+    public class ARLineMessage : MessageBase
+    {
+        public Vector3[] pointPositions;
     }
     public class AssetMessage
     {
@@ -66,13 +74,21 @@ public class CustomNetworkManager : MonoBehaviour
         message.triangles = triangles;
         NetworkServer.SendToAll(CustomMessage.lineMessage, message);
     }
+    public void sendARLine(Vector3[] pointPositions)
+    {
+        ARLineMessage message = new ARLineMessage();
+        message.pointPositions = pointPositions;
+        NetworkServer.SendToAll(CustomMessage.lineMessage, message);
+    }
     public void onServerReceiveMessage(NetworkMessage msg)
     {
         // TODO: Add linerenderer drawing on server (VR) side
+        ARLineMessage message = msg.ReadMessage<ARLineMessage>();
+        lineHandler.SpawnLineGenerator(message.pointPositions);
     }
     public void onClientReceiveMessage(NetworkMessage msg)
     {
-        Debug.Log("Received message");
+        //Debug.Log("Received message");
         PointsMessage message = msg.ReadMessage<PointsMessage>();
 
         // line object
@@ -94,7 +110,7 @@ public class CustomNetworkManager : MonoBehaviour
     private GameObject SpawnSphere(Vector3 position, NetworkHash128 assetId)
     {
         GameObject clientObject = Instantiate(clientPrefab, position, Quaternion.identity);
-        clientObject.transform.SetParent(SceneRoot.transform);
+        //clientObject.transform.SetParent(SceneRoot.transform);
         clientObject.AddComponent<NetworkIdentity>();
         clientObject.AddComponent<NetworkTransform>();
         return clientObject;

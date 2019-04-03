@@ -8,6 +8,7 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
     public GameObject lineGeneratorPrefab;
     public GameObject linePointPrefab;
     public GameObject SpatialMapping;
+    public CustomNetworkManager NetworkManager;
     private Vector3 lastPoint;
     private List<GameObject> lineGeneratorList;
     private bool firstPoint = true;
@@ -28,7 +29,7 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        Debug.Log("Input Clicked");
+        //Debug.Log("Input Clicked");
         Vector3 position = Vector3.zero;
         //if (eventData.InputSource.TryGetPointerPosition(eventData.SourceId, out position))
         //{
@@ -36,17 +37,17 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
         //}
         if (eventData.InputSource.TryGetGripPosition(eventData.SourceId, out position))
         {
-            Debug.Log("Grip: " + position);
+            //Debug.Log("Grip: " + position);
         }
         //eventData.Use();
     }
 
     public void OnInputDown(InputEventData eventData)
     {
-        Debug.Log("Input Down");
+        //Debug.Log("Input Down");
         InteractionSourceInfo source;
         eventData.InputSource.TryGetSourceKind(eventData.SourceId, out source);
-        Debug.Log("Source: " + source);
+        //Debug.Log("Source: " + source);
         Holding = true;
         //Vector3 handPosition;
         //eventData.InputSource.TryGetGripPosition(eventData.SourceId, out handPosition);
@@ -63,10 +64,10 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
 
     public void OnInputUp(InputEventData eventData)
     {
-        Debug.Log("Input Up");
+        //Debug.Log("Input Up");
         if (Holding)
         {
-            Debug.Log("Stopped holding");
+            //Debug.Log("Stopped holding");
             Holding = false;
 
             // Create line if a line was being drawn
@@ -80,13 +81,13 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
 
     public void OnHoldStarted(HoldEventData eventData)
     {
-        Debug.Log("Holding started");
+        //Debug.Log("Holding started");
         //Holding = true;
         //eventData.Use();
     }
     public void OnHoldCompleted(HoldEventData eventData)
     {
-        Debug.Log("Holding completed without movement");
+        //Debug.Log("Holding completed without movement");
         //Holding = false;
 
         //// Create line if a line was being drawn
@@ -112,20 +113,20 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
 
     public void OnSourceDetected(SourceStateEventData eventData)
     {   
-        Debug.Log(gameObject.transform.GetChild(0));
-        Debug.Log("Before: " + gameObject.transform.GetChild(0).gameObject.activeInHierarchy);
-        Debug.Log("Hand detected");
+        //Debug.Log(gameObject.transform.GetChild(0));
+        //Debug.Log("Before: " + gameObject.transform.GetChild(0).gameObject.activeInHierarchy);
+        //Debug.Log("Hand detected");
         Vector3 position = Vector3.zero;
         uint sourceId = eventData.SourceId;
         eventData.InputSource.TryGetGripPosition(sourceId, out position);
         gameObject.transform.GetChild(0).transform.position = position;
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        Debug.Log("After: " + gameObject.transform.GetChild(0).gameObject.activeInHierarchy);
+        //Debug.Log("After: " + gameObject.transform.GetChild(0).gameObject.activeInHierarchy);
     }
 
     public void OnSourceLost(SourceStateEventData eventData)
     {
-        Debug.Log("Hand lost");
+        //Debug.Log("Hand lost");
         Holding = false;
 
         firstPoint = true;
@@ -217,7 +218,7 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
 
 
     private void CreateLinePoint(Vector3 pointPosition) {
-        Debug.Log("Creating line point");
+        //Debug.Log("Creating line point");
         Instantiate(linePointPrefab, pointPosition, Quaternion.identity);
     }
     private void ClearAllPoints() {
@@ -228,13 +229,13 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
         }
     }
     public void DeleteLastLine() {
-        Debug.Log("Deleting last line");
+        //Debug.Log("Deleting last line");
         GameObject lastLineGenerator = lineGeneratorList[lineGeneratorList.Count - 1];
         lineGeneratorList.RemoveAt(lineGeneratorList.Count - 1);
         Destroy(lastLineGenerator);
     }
     private void GenerateNewLine() {
-        Debug.Log("Generating line");
+        //Debug.Log("Generating line");
         GameObject[] points = GameObject.FindGameObjectsWithTag("LinePoint");
         Vector3[] pointPositions;
 
@@ -246,6 +247,8 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
                 pointPositions[i] = points[i].transform.position;
             }
             SpawnLineGenerator(pointPositions);
+            // Send line to VR
+            NetworkManager.sendARLine(pointPositions);
         }
             //} else if (points.Length == 1) {
             //    pointPositions = new Vector3[2];
@@ -256,12 +259,12 @@ public class DrawLine : MonoBehaviour, IInputHandler, IInputClickHandler, IHoldH
             //}
 
         }
-	void SpawnLineGenerator(Vector3[] pointPositions)
+	public void SpawnLineGenerator(Vector3[] pointPositions)
     {
-        Debug.Log("Spawning line generator");
-        Debug.Log("Points: " + pointPositions);
-        Debug.Log("Length: " + pointPositions.GetLength(0));
-        Debug.Log("Other length: " + pointPositions.Length);
+        //Debug.Log("Spawning line generator");
+        //Debug.Log("Points: " + pointPositions);
+        //Debug.Log("Length: " + pointPositions.GetLength(0));
+        //Debug.Log("Other length: " + pointPositions.Length);
         GameObject lineGeneratorClone = Instantiate(lineGeneratorPrefab);
         LineRenderer lineRenderer = lineGeneratorClone.GetComponent<LineRenderer>();
 
