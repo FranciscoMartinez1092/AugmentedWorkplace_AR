@@ -78,7 +78,7 @@ public class CustomNetworkManager : MonoBehaviour
     {
         ARLineMessage message = new ARLineMessage();
         message.pointPositions = pointPositions;
-        NetworkServer.SendToAll(CustomMessage.lineMessage, message);
+        myClient.Send(CustomMessage.lineMessage, message);
     }
     public void onServerReceiveMessage(NetworkMessage msg)
     {
