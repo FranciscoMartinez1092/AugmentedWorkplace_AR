@@ -17,6 +17,8 @@ namespace HoloToolkit.Unity.SpatialMapping
     [RequireComponent(typeof(SpatialMappingObserver))]
     public partial class SpatialMappingManager : Singleton<SpatialMappingManager>
     {
+        public GameObject Canvas;
+        private LogStates logger;
         [Tooltip("The physics layer for spatial mapping objects to be set to.")]
         public int PhysicsLayer = 31;
 
@@ -88,6 +90,9 @@ namespace HoloToolkit.Unity.SpatialMapping
         protected override void Awake()
         {
             base.Awake();
+
+            // Add debug text logger
+            logger = Canvas.GetComponent<LogStates>();
 
             surfaceObserver = gameObject.GetComponent<SpatialMappingObserver>();
             Source = surfaceObserver;
@@ -217,10 +222,12 @@ namespace HoloToolkit.Unity.SpatialMapping
             if (!UnityEngine.VR.VRDevice.isPresent) { return; }
 #endif
 #endif
+            logger.AppendMeshDebugText("Starting Observer...");
             if (!IsObserverRunning())
             {
                 surfaceObserver.StartObserving();
                 StartTime = Time.unscaledTime;
+                logger.AppendMeshDebugText("Observer started");
             }
         }
 
@@ -237,9 +244,11 @@ namespace HoloToolkit.Unity.SpatialMapping
             if (!UnityEngine.VR.VRDevice.isPresent) { return; }
 #endif
 #endif
+            logger.AppendMeshDebugText("Stopping observer...");
             if (IsObserverRunning())
             {
                 surfaceObserver.StopObserving();
+                logger.AppendMeshDebugText("Stopped observer");
             }
         }
 

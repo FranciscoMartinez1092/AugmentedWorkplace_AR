@@ -61,4 +61,12 @@ public class LogStates : MonoBehaviour
 
         this.LogText.text = this.sb.ToString();
     }
+    
+    // Debug text
+    public void AppendMeshDebugText(string text)
+    {
+        this.sb.AppendLine(text);
+
+        this.LogText.text = this.sb.ToString();
+    }
 }

@@ -10,8 +10,9 @@ public class CustomNetworkManager : MonoBehaviour
     public GameObject clientPrefab;
     public GameObject SceneRoot;
     public DrawLine lineHandler;
-
+    public GameObject SpatialMeshVR;
     public Material lineMaterial;
+    public Material surfaceMaterial;
 
     public bool isAtStartup = true;
     public bool isTheClient = true;
@@ -22,7 +23,16 @@ public class CustomNetworkManager : MonoBehaviour
     public class CustomMessage
     {
         public static short lineMessage = MsgType.Highest + 1;
-    };
+    }
+    public class AssetMessage
+    {
+        public static short assetMessage = MsgType.Highest + 2;
+    }
+    public class SpatialMeshMsg
+    {
+        public static short meshMsg = MsgType.Highest + 3;
+    }
+
     public class PointsMessage : MessageBase
     {
         public Vector3[] vertices;
@@ -33,14 +43,34 @@ public class CustomNetworkManager : MonoBehaviour
     {
         public Vector3[] pointPositions;
     }
-    public class AssetMessage
-    {
-        public static short assetMessage = MsgType.Highest + 2;
-    }
-
     public class AssetsMessage : MessageBase
     {
         public NetworkHash128 assetId;
+    }
+    public void sendSpatialMesh(Vector3[] vertices, Vector2[] uvs, int[] triangles)
+    {
+        PointsMessage message = new PointsMessage();
+        message.vertices = vertices;
+        message.uvs = uvs;
+        message.triangles = triangles;
+        NetworkServer.SendToAll(SpatialMeshMsg.meshMsg, message);
+    }
+    public void onSpatialMeshMsg(NetworkMessage netMsg)
+    {
+        Debug.Log("Received spatial mesh message");
+        PointsMessage message = netMsg.ReadMessage<PointsMessage>();
+
+        // line object
+        GameObject surfaceObject = new GameObject("Surface Object");
+        surfaceObject.transform.SetParent(SpatialMeshVR.transform);
+
+        Mesh mesh = new Mesh();
+        surfaceObject.AddComponent<MeshFilter>().mesh = mesh;
+        mesh.vertices = message.vertices;
+        mesh.uv = message.uvs;
+        mesh.triangles = message.triangles;
+        surfaceObject.AddComponent<MeshRenderer>().material = surfaceMaterial;
+
     }
     public void sendAssetId(NetworkHash128 assetId)
     {
@@ -149,6 +179,7 @@ public class CustomNetworkManager : MonoBehaviour
         NetworkServer.RegisterHandler(MsgType.Ready, OnClientReady);
         // Handle incoming line data
         NetworkServer.RegisterHandler(CustomMessage.lineMessage, onServerReceiveMessage);
+        NetworkServer.RegisterHandler(SpatialMeshMsg.meshMsg, onSpatialMeshMsg);
         //NetworkServer.RegisterHandler(MsgType.AddPlayer, OnAddPlayerMessage);
     }
     //void OnAddPlayerMessage(NetworkMessage netMsg)
