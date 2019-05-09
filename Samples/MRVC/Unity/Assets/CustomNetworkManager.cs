@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-[NetworkSettings(channel = 6, sendInterval = (1.0f / 29.0f))]
+//[NetworkSettings(channel = 6, sendInterval = (1.0f / 29.0f))]
 public class CustomNetworkManager : MonoBehaviour
 {
+    public int port;
     public NetworkIdentity prefab;
     public GameObject clientPrefab;
     public GameObject SceneRoot;
@@ -53,7 +54,7 @@ public class CustomNetworkManager : MonoBehaviour
         message.vertices = vertices;
         message.uvs = uvs;
         message.triangles = triangles;
-        NetworkServer.SendToAll(SpatialMeshMsg.meshMsg, message);
+        myClient.Send(SpatialMeshMsg.meshMsg, message);
     }
     public void onSpatialMeshMsg(NetworkMessage netMsg)
     {
@@ -173,7 +174,7 @@ public class CustomNetworkManager : MonoBehaviour
     // Create a server and listen on a port
     public void SetupServer()
     {
-        NetworkServer.Listen(4444);
+        NetworkServer.Listen(port);
         isAtStartup = false;
         NetworkServer.RegisterHandler(MsgType.Connect, onServerReceiveConnect);
         NetworkServer.RegisterHandler(MsgType.Ready, OnClientReady);
@@ -200,7 +201,7 @@ public class CustomNetworkManager : MonoBehaviour
         // Handle incoming line data
         myClient.RegisterHandler(CustomMessage.lineMessage, onClientReceiveMessage);
         Debug.Log("Attemping to connect");
-        myClient.Connect(serverAddress, 4444);
+        myClient.Connect(serverAddress, port);
         Debug.Log("Status: " + myClient.isConnected);
         isAtStartup = false;
     }
