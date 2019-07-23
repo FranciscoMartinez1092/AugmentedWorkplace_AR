@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{f82f7143-b5e2-4226-bee1-e9ee1cf40b5d}</ProjectGuid>
+    <ProjectGuid>{45C27D1C-57E6-4B71-B4A4-AD87B22B6D45}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssemblyCSharpWSA</RootNamespace>
@@ -130,8 +130,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="E:\Unity Projects\MixedRealityCompanionKit-master\MixedRemoteViewCompositor\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
-      <Project>{0c017dad-8d33-4697-946d-5f5ee7d18670}</Project>
+    <ProjectReference Include="C:\Users\Zhu\Documents\Unity Projects\MRVC\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
+      <Project>{842530cf-e226-4768-b530-fe6cb03d7908}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <Reference Include="UnityEngine.TextRenderingModule">
@@ -354,9 +354,9 @@
       <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\GLTFSerializationUWP.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <SDKReference Include="WindowsDesktop, Version=10.0.17763.0"/>
-    <SDKReference Include="WindowsMobile, Version=10.0.17763.0"/>
-    <SDKReference Include="WindowsTeam, Version=10.0.17763.0"/>
+    <SDKReference Include="WindowsDesktop, Version=10.0.17763.0" />
+    <SDKReference Include="WindowsMobile, Version=10.0.17763.0" />
+    <SDKReference Include="WindowsTeam, Version=10.0.17763.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(UnityProjectDir)Assets\AddOns\MixedRemoteViewCompositor\Scripts\Interop\CaptureEngine.cs">
@@ -398,8 +398,14 @@
     <Compile Include="$(UnityProjectDir)Assets\AddOns\MixedRemoteViewCompositor\Scripts\VideoCompositor.cs">
       <Link>AddOns\MixedRemoteViewCompositor\Scripts\VideoCompositor.cs</Link>
     </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\ButtonManager.cs">
+      <Link>ButtonManager.cs</Link>
+    </Compile>
     <Compile Include="$(UnityProjectDir)Assets\CursorScript.cs">
       <Link>CursorScript.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\CustomNetworkManager.cs">
+      <Link>CustomNetworkManager.cs</Link>
     </Compile>
     <Compile Include="$(UnityProjectDir)Assets\DrawLine.cs">
       <Link>DrawLine.cs</Link>
@@ -1946,6 +1952,9 @@
     <Compile Include="$(UnityProjectDir)Assets\MyNetworkManager.cs">
       <Link>MyNetworkManager.cs</Link>
     </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MyNetworkTransform.cs">
+      <Link>MyNetworkTransform.cs</Link>
+    </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Scripts\CursorManager.cs">
       <Link>Scripts\CursorManager.cs</Link>
     </Compile>
@@ -1975,14 +1984,14 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-    <PropertyGroup>
+  <PropertyGroup>
     <TargetsTriggeredByCompilation>$(TargetsTriggeredByCompilation);RunSerializationWeaver</TargetsTriggeredByCompilation>
   </PropertyGroup>
   <Target Name="RunSerializationWeaver" Condition="'$(BuildingProject)' == 'true'">
     <Message Importance="high" Text="Running SerializationWeaver..." />
     <Move SourceFiles="@(IntermediateAssembly)" DestinationFolder="$(TargetDir)Unprocessed" OverwriteReadOnlyFiles="true" />
-    <Move SourceFiles="@(IntermediateAssembly-&gt;'%(RelativeDir)%(Filename).pdb')" DestinationFolder="$(TargetDir)Unprocessed" Condition="Exists('@(IntermediateAssembly-&gt;'%(RelativeDir)%(Filename).pdb')')" OverwriteReadOnlyFiles="true" />
-    <Exec Command="&quot;$(UnityWSAToolsDir)SerializationWeaver\SerializationWeaver.exe&quot; &quot;$(TargetDir)Unprocessed\$(TargetFileName)&quot; &quot;-pdb&quot; &quot;-verbose&quot; &quot;-unity-engine=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.CoreModule.dll&quot; &quot;$([System.IO.Path]::GetFullPath('$(IntermediateOutputPath)').TrimEnd('\'))&quot; &quot;-lock=$([System.IO.Path]::Combine('$(ProjectDir)', 'project.lock.json'))&quot; &quot;@E:\Unity Projects\MixedRealityCompanionKit-master\MixedRemoteViewCompositor\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp\SerializationWeaverArgs.txt&quot; &quot;-additionalAssemblyPath=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed&quot; &quot;-unity-networking=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.Networking.dll&quot; &quot;-additionalAssemblyPath=$(UnityWSASolutionDir)GeneratedProjects\UWP\Assembly-CSharp-firstpass\bin\$(PlatformName)\$(ConfigurationName)&quot;" />
+    <Move SourceFiles="@(IntermediateAssembly->'%(RelativeDir)%(Filename).pdb')" DestinationFolder="$(TargetDir)Unprocessed" Condition="Exists('@(IntermediateAssembly->'%(RelativeDir)%(Filename).pdb')')" OverwriteReadOnlyFiles="true" />
+    <Exec Command="&quot;$(UnityWSAToolsDir)SerializationWeaver\SerializationWeaver.exe&quot; &quot;$(TargetDir)Unprocessed\$(TargetFileName)&quot; &quot;-pdb&quot; &quot;-verbose&quot; &quot;-unity-engine=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.CoreModule.dll&quot; &quot;$([System.IO.Path]::GetFullPath('$(IntermediateOutputPath)').TrimEnd('\'))&quot; &quot;-lock=$([System.IO.Path]::Combine('$(ProjectDir)', 'project.lock.json'))&quot; &quot;@C:\Users\Zhu\Documents\Unity Projects\MRVC\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp\SerializationWeaverArgs.txt&quot; &quot;-additionalAssemblyPath=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed&quot; &quot;-unity-networking=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.Networking.dll&quot; &quot;-additionalAssemblyPath=$(UnityWSASolutionDir)GeneratedProjects\UWP\Assembly-CSharp-firstpass\bin\$(PlatformName)\$(ConfigurationName)&quot;" />
     <Message Importance="high" Text="SerializationWeaver done." />
   </Target>
   <PropertyGroup>

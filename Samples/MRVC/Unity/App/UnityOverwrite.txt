@@ -5,12 +5,12 @@
 # Write a line equal to 'overwrite-all' (without quotes) to overwrite everything (preserved accross builds)
 # Write a line equal to 'keep-all' (without quotes) to keep files regardless their modification (preserved accross builds)
 # Default behavior is to never overwrite files
-MrvcSample.sln: modified
+MrvcSample.sln: BD46A72535E0A68869FA9B60DF68BF1A
 GeneratedProjects\UWP\Assembly-CSharp\project.json: 1D02BC64BAC0D041019673A1C4C51737
 GeneratedProjects\UWP\Assembly-CSharp-firstpass\project.json: 1D02BC64BAC0D041019673A1C4C51737
 MrvcSample\App.cs: 808B1C29BFAC9E32F712F7E50BC3B810
-MrvcSample\MrvcSample.csproj: C7BBEEB3E476E9FAD80A0211CF89B601
-MrvcSample\MrvcSample.csproj.user: modified
+MrvcSample\MrvcSample.csproj: 75CCEDB9CBAD1AF7C70710709B0A8BC6
+MrvcSample\MrvcSample.csproj.user: BEFB8AC4886C4CFDD3C68445D6F19B04
 MrvcSample\Package.appxmanifest: A8ADABB0B4C80282E798C13757D10B32
 MrvcSample\project.json: 1D02BC64BAC0D041019673A1C4C51737
 MrvcSample\Assets\SplashScreen.scale-200.png: A85C1D7624B6902CF8CEBD6F0200A826
@@ -19,12 +19,4 @@ MrvcSample\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775D
 MrvcSample\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
 MrvcSample\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
 MrvcSample\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-MrvcSample\bin\x86\Release\AppX\Assets\SplashScreen.scale-200.png: A85C1D7624B6902CF8CEBD6F0200A826
-MrvcSample\bin\x86\Release\AppX\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
-MrvcSample\bin\x86\Release\AppX\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
-MrvcSample\bin\x86\Release\AppX\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
-MrvcSample\bin\x86\Release\AppX\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
-MrvcSample\bin\x86\Release\AppX\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-MrvcSample\bin\x86\Release\AppX\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826
-MrvcSample\obj\x86\Release\MrvcSample.csproj.CopyComplete: D41D8CD98F00B204E9800998ECF8427E
 MrvcSample\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826

@@ -359,13 +359,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="E:\Unity Projects\MixedRealityCompanionKit-master\MixedRemoteViewCompositor\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj">
-      <Project>{f82f7143-b5e2-4226-bee1-e9ee1cf40b5d}</Project>
+    <ProjectReference Include="C:\Users\Zhu\Documents\Unity Projects\MRVC\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj">
+      <Project>{aa20cdb0-3282-4150-87d5-1f9ccfab7d4a}</Project>
       <Name>Assembly-CSharp</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="E:\Unity Projects\MixedRealityCompanionKit-master\MixedRemoteViewCompositor\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
-      <Project>{0c017dad-8d33-4697-946d-5f5ee7d18670}</Project>
+    <ProjectReference Include="C:\Users\Zhu\Documents\Unity Projects\MRVC\Samples\MRVC\Unity\App\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
+      <Project>{842530cf-e226-4768-b530-fe6cb03d7908}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
       <Private>False</Private>
     </ProjectReference>

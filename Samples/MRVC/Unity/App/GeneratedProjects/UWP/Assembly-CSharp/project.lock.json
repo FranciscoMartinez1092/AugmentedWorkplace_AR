@@ -16067,19 +16067,19 @@
     "UAP,Version=v10.0.10240": []
   },
   "packageFolders": {
-    "C:\\Users\\Augmented Workplace\\.nuget\\packages\\": {}
+    "C:\\Users\\Zhu\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\Assembly-CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\Zhu\\Documents\\Unity Projects\\MRVC\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\Assembly-CSharp.csproj",
       "projectName": "Assembly-CSharp",
-      "projectPath": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\Assembly-CSharp.csproj",
-      "projectJsonPath": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\project.json",
-      "packagesPath": "C:\\Users\\Augmented Workplace\\.nuget\\packages\\",
-      "outputPath": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\obj\\",
+      "projectPath": "C:\\Users\\Zhu\\Documents\\Unity Projects\\MRVC\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\Assembly-CSharp.csproj",
+      "projectJsonPath": "C:\\Users\\Zhu\\Documents\\Unity Projects\\MRVC\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\project.json",
+      "packagesPath": "C:\\Users\\Zhu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zhu\\Documents\\Unity Projects\\MRVC\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
-        "C:\\Users\\Augmented Workplace\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zhu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "sources": {
@@ -16089,8 +16089,8 @@
       "frameworks": {
         "uap10.0.10240": {
           "projectReferences": {
-            "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj": {
-              "projectPath": "E:\\Unity Projects\\MixedRealityCompanionKit-master\\MixedRemoteViewCompositor\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj"
+            "C:\\Users\\Zhu\\Documents\\Unity Projects\\MRVC\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj": {
+              "projectPath": "C:\\Users\\Zhu\\Documents\\Unity Projects\\MRVC\\Samples\\MRVC\\Unity\\App\\GeneratedProjects\\UWP\\Assembly-CSharp-firstpass\\Assembly-CSharp-firstpass.csproj"
             }
           }
         }
