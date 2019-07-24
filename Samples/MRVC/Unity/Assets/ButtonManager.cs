@@ -23,7 +23,7 @@ public class ButtonManager : MonoBehaviour, IInputClickHandler, IInputHandler
         logger.AppendMeshDebugText(meshes.Count.ToString() + " meshes.");
         foreach (Mesh mesh in meshes)
         {
-            networkManager.sendSpatialMesh(mesh.vertices, mesh.uv, mesh.triangles);
+            networkManager.sendSpatialMesh(mesh);
         }
         //if (!Observing)
         //{
