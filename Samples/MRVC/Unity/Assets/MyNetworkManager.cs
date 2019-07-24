@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using System.Collections.Generic;
 
 public class MyNetworkManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MyNetworkManager : MonoBehaviour
     public NetworkIdentity prefab;
     NetworkClient myClient;
     public Material lineMaterial;
+    public static PhotonView photonView;
 
     public class CustomMessage
     { 
@@ -29,13 +31,18 @@ public class MyNetworkManager : MonoBehaviour
         public Vector2[] uvs;
         public int[] triangles;
     }
-    public void sendMessage(Vector3[] vertices, Vector2[] uvs, int[] triangles)
+    //public void sendMessage(Vector3[] vertices, Vector2[] uvs, int[] triangles)
+    public void sendMessage(Mesh mesh)
     {
-        PointsMessage message = new PointsMessage();
-        message.vertices = vertices;
-        message.uvs = uvs;
-        message.triangles = triangles;
-        NetworkServer.SendToAll(CustomMessage.hiMessage, message);
+        //PointsMessage message = new PointsMessage();
+        //message.vertices = vertices;
+        //message.uvs = uvs;
+        //message.triangles = triangles;
+        //NetworkServer.SendToAll(CustomMessage.hiMessage, message);
+
+        var data = MeshSerializer.WriteMesh(mesh, true);
+        
+        photonView.RPC("TransferMesh", PhotonTargets.All, CustomMessage.hiMessage, data);
     }
 
     public void onServerReceiveMessage(NetworkMessage msg)
@@ -65,9 +72,11 @@ public class MyNetworkManager : MonoBehaviour
     }
     private void Start()
     {
+        photonView = PhotonView.Get(this);
+
         // setup code for VR
-       Debug.Log("STARTING CLIENT");
-       SetupClient();
+        Debug.Log("STARTING CLIENT MyNetworkManager");
+        SetupClient();
     }
     void Update()
     {
@@ -139,7 +148,6 @@ public class MyNetworkManager : MonoBehaviour
     public void SetupClient()
     {
         ClientScene.RegisterPrefab(prefab.gameObject);
-        Debug.Log(ClientScene.prefabs);
         myClient = new NetworkClient();
         myClient.RegisterHandler(MsgType.Connect, OnConnected);
         myClient.RegisterHandler(AssetMessage.assetMessage, onAssetMsg);

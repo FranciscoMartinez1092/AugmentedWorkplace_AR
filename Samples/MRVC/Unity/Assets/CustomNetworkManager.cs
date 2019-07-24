@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using HoloToolkit.Unity.SpatialMapping;
+using System.Collections.Generic;
 
 //[NetworkSettings(channel = 6, sendInterval = (1.0f / 29.0f))]
 public class CustomNetworkManager : MonoBehaviour
@@ -18,6 +20,7 @@ public class CustomNetworkManager : MonoBehaviour
     public bool isAtStartup = true;
     public bool isTheClient = true;
     public string serverAddress;
+    public static PhotonView photonView;
 
     NetworkClient myClient;
 
@@ -48,13 +51,17 @@ public class CustomNetworkManager : MonoBehaviour
     {
         public NetworkHash128 assetId;
     }
-    public void sendSpatialMesh(Vector3[] vertices, Vector2[] uvs, int[] triangles)
+    public void sendSpatialMesh(Mesh mesh)
     {
-        PointsMessage message = new PointsMessage();
-        message.vertices = vertices;
-        message.uvs = uvs;
-        message.triangles = triangles;
-        myClient.Send(SpatialMeshMsg.meshMsg, message);
+        //PointsMessage message = new PointsMessage();
+        //message.vertices = vertices;
+        //message.uvs = uvs;
+        //message.triangles = triangles;
+        //myClient.Send(SpatialMeshMsg.meshMsg, message);
+
+        var data = MeshSerializer.WriteMesh(mesh, true);
+
+        photonView.RPC("TransferMesh", PhotonTargets.All, SpatialMeshMsg.meshMsg, data);
     }
     public void onSpatialMeshMsg(NetworkMessage netMsg)
     {
@@ -109,7 +116,9 @@ public class CustomNetworkManager : MonoBehaviour
     {
         ARLineMessage message = new ARLineMessage();
         message.pointPositions = pointPositions;
-        myClient.Send(CustomMessage.lineMessage, message);
+        //myClient.Send(CustomMessage.lineMessage, message);
+
+        photonView.RPC("TransferARLine", PhotonTargets.All, CustomMessage.lineMessage, pointPositions);
     }
     public void onServerReceiveMessage(NetworkMessage msg)
     {
@@ -152,6 +161,8 @@ public class CustomNetworkManager : MonoBehaviour
     }
     void Start()
     {
+        photonView = PhotonView.Get(this);
+
         ConnectionConfig myConfig = new ConnectionConfig();
         Debug.Log("Channels: " + myConfig.ChannelCount);
         foreach (ChannelQOS channel in myConfig.Channels)
@@ -161,7 +172,7 @@ public class CustomNetworkManager : MonoBehaviour
         // setup code
         if (isTheClient)
         {
-            Debug.Log("STARTING CLIENT");
+            Debug.Log("STARTING CLIENT CustomNetworkManager");
             SetupClient();
         }
         else
@@ -195,15 +206,36 @@ public class CustomNetworkManager : MonoBehaviour
     {
         // TODO: TEMP
         //ClientScene.RegisterPrefab(prefab.gameObject, SpawnSphere, UnspawnSphere);
-        myClient = new NetworkClient();
-        myClient.RegisterHandler(MsgType.Connect, OnConnected);
-        myClient.RegisterHandler(AssetMessage.assetMessage, onAssetMsg);
+        //myClient = new NetworkClient();
+        //myClient.RegisterHandler(MsgType.Connect, OnConnected);
+        //myClient.RegisterHandler(AssetMessage.assetMessage, onAssetMsg);
         // Handle incoming line data
-        myClient.RegisterHandler(CustomMessage.lineMessage, onClientReceiveMessage);
-        Debug.Log("Attemping to connect");
-        myClient.Connect(serverAddress, port);
-        Debug.Log("Status: " + myClient.isConnected);
+        //myClient.RegisterHandler(CustomMessage.lineMessage, onClientReceiveMessage);
+        //Debug.Log("Attemping to connect");
+        //myClient.Connect(serverAddress, port);
+        //Debug.Log("Status: " + myClient.isConnected);
         isAtStartup = false;
+    }
+
+    [PunRPC]
+    public void ClientConnected(NetworkMessage msg)
+    {
+        Debug.Log("Client connected: " + MsgType.Connect);
+        OnConnected(msg);
+    }
+
+    [PunRPC]
+    public void TransferAssetMessage(NetworkMessage msg)
+    {
+        Debug.Log("Asset Message: " + AssetMessage.assetMessage);
+        onAssetMsg(msg);
+    }
+
+    [PunRPC]
+    public void TransferLineMessage(NetworkMessage msg)
+    {
+        Debug.Log("Line Message: " + CustomMessage.lineMessage);
+        onClientReceiveMessage(msg);
     }
 
     public void OnClientReady(NetworkMessage netMsg)

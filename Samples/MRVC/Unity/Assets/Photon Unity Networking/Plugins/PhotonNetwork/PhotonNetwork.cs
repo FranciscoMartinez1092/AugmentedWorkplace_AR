@@ -1766,6 +1766,9 @@ public static class PhotonNetwork
         opParams.RoomName = roomName;
         opParams.ExpectedUsers = expectedUsers;
 
+        Debug.Log("Joined room");
+        Debug.Log(roomName);
+
         return networkingPeer.OpJoinRoom(opParams);
     }
 

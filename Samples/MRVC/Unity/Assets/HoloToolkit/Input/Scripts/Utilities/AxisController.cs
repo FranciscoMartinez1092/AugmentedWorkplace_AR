@@ -548,11 +548,15 @@ namespace HoloToolkit.Unity.InputModule
         [System.Runtime.InteropServices.DllImport("kernel32.dll")]
         private static extern uint WTSGetActiveConsoleSessionId();
 
+        //private bool IsRunningUnderRemoteDesktop()
+        //{
+        //    uint processId = GetCurrentProcessId();
+        //    uint sessionId;
+        //    return ProcessIdToSessionId(processId, out sessionId) && (sessionId != WTSGetActiveConsoleSessionId());
+        //}
         private bool IsRunningUnderRemoteDesktop()
         {
-            uint processId = GetCurrentProcessId();
-            uint sessionId;
-            return ProcessIdToSessionId(processId, out sessionId) && (sessionId != WTSGetActiveConsoleSessionId());
+            return false;
         }
 #else
         private bool IsRunningUnderRemoteDesktop()

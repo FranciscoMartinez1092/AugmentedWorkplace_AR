@@ -61,7 +61,8 @@ namespace MixedRemoteViewCompositor
 
         private void Awake()
         {
-            Wrapper.exSetStreamingAssetsPath(Application.streamingAssetsPath);
+            var path = Application.streamingAssetsPath;
+            Wrapper.exSetStreamingAssetsPath(path);
         }
         
         private void OnEnable()
