@@ -29,10 +29,10 @@ namespace HoloCameraTextureMapping
             StartCoroutine(DisplayLoadingMessage());
             //StartCoroutine(DisplayScanningMessage());
             TextureMappingManager.Instance.SpatialMappingCreated += SpatialMappingCreated;
-            InteractionManager.OnTapped += TappedCallBack;
+            UnityEngine.XR.WSA.Input.InteractionManager.OnTapped += TappedCallBack;
         }
 
-        private void TappedCallBack(GameObject obj, InteractionManager.InteractionEventArgs arg)
+        private void TappedCallBack(GameObject obj, UnityEngine.XR.WSA.Input.InteractionManager.InteractionEventArgs arg)
         {
             if (obj == null ||
                 (obj.transform.parent != null && obj.transform.parent.gameObject == SpatialMappingManager.Instance.gameObject) ||
